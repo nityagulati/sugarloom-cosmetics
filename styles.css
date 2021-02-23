@@ -1,0 +1,237 @@
+/* -----------------------------------
+mobile-first layout - min-width: 320px
+-------------------------------------- */
+
+/* global elements */
+:root {
+  --badge-color: #F5CE3F;
+  --box-shadow-color: rgba(51, 3, 0, 0.5);
+  --color-black: #000;
+  --main-bg-color: #ECE6EA;
+  --main-text-color: #58595B;
+  --primary-heading: #760d46;
+  --primary-link: #EC1A8D;
+  --primary-link-active: #a51262;
+  --primary-link-hover: #f15eaf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--primary-link);
+}
+
+a:hover {
+  color: var(--primary-link-hover);
+}
+
+.black-font {
+  color: var(--color-black);
+}
+
+
+/* -----------------------
+back to top sticky button
+-------------------------- */
+.back-to-top {
+    position: fixed;
+    bottom: 15%;
+    right: 0;
+    display: none;
+}
+
+.back-to-top:hover {
+  border: 1px solid var(--primary-heading);
+}
+
+
+/* -------------
+primary buttons
+---------------- */
+.btn-primary, .btn-primary:active, .btn-primary:focus {
+  background-color: var(--primary-link);
+  border-color: var(--primary-link);
+  box-shadow: 1px 3px 8px var(--box-shadow-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--main-bg-color);
+  border-color: var(--primary-link);
+  color: var(--primary-link);
+}
+
+
+/* -------------
+section headings
+---------------- */
+.heading {
+  color: var(--primary-heading);
+}
+
+
+/* ---------------
+cover/hero section
+------------------ */
+.badge-position {
+  order: 1;  /* move shipping badge below the toggle menu */
+}
+
+button.badge {
+  background-color: var(--badge-color);
+  border: 1px dashed var(--primary-heading);
+  box-shadow: 1px 3px 8px var(--box-shadow-color);
+  cursor: default;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 2% 5%;
+}
+
+button.badge:focus {
+  outline: none;
+}
+
+/* button.badge:not(:disabled) {
+  cursor: default;
+} */
+
+.cover-container {
+  background-image: url('images/nail_banner_grid_bg-min.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--main-bg-color);
+}
+
+.hero-content .lead {
+  font-weight: 500;
+}
+
+
+/* ---------------
+navigation menu
+------------------ */
+.nav-link {
+  color: var(--primary-link);
+  font-size: 1.1rem;
+}
+
+.nav-link:visited {
+  color: var(--primary-link);
+}
+
+.nav-link:hover {
+  color: var(--primary-link-hover);
+  border-bottom: 3px solid;
+}
+
+.nav-link:active {
+  color: var(--primary-link-active);
+  border-bottom: 3px solid;
+}
+
+.navbar-toggler {
+  font-size: 0.01rem;
+}
+
+.navbar-toggler .line {
+  height: 3px;
+  background-color: var(--primary-link);
+}
+
+
+/* ---------------
+press section
+------------------ */
+.press {
+  background-color: var(--main-bg-color);
+  border: 1px solid transparent;
+  box-shadow: 3px 3px 15px var(--box-shadow-color);
+}
+
+.press-logo {
+  opacity: 0.4;
+}
+
+/* change logo image color for ebony png */
+.ebony-logo {
+  max-width: 100%;
+  height: auto;
+  filter: invert(56%) sepia(11%) saturate(3526%) hue-rotate(285deg) brightness(96%) contrast(96%);
+}
+
+
+/* ---------------
+lookbook.html page
+------------------ */
+.lookbook-img {
+  box-shadow: 3px 3px 10px var(--box-shadow-color);
+}
+
+/* set gallery modal dialog fixed height */
+.modal {
+  max-height: 100vh;
+}
+
+.modal-body {
+    max-height: calc(100vh - 143px);
+    overflow-y: hidden;
+}
+
+
+/* ----------------------------
+responsive layouts - scaled up
+bootstrap breakpoint - small
+------------------------------- */
+@media screen and (min-width: 576px) {
+  button.badge {  padding: 1% 5%; }
+  .badge-position {  position: absolute; top: 100%; }
+  .cover-container {  height: 50vh; }
+  .navbar-brand {  vertical-align: middle; }
+  .nav-link {  line-height: 1; }
+  .navbar-nav {  justify-content: center; }
+}
+
+
+/* ---------------------------
+bootstrap breakpoint - medium
+iPad devices and similar
+------------------------------ */
+@media screen and (min-width: 768px) {
+  button.badge {  border-radius: 0 0 4px 4px; border-top: 0; padding: 0.5% 5%; }
+  .badge-position {  top: 0; left: 30%; }
+  .cover-container {  background-image: url('images/nail_banner_grid-min.jpg'); }
+  .navbar-brand {  margin-right: 18%; }
+  .nav-menu {  margin-top: 3%; }
+}
+
+
+/* ---------------------------
+bootstrap breakpoint - large
+iPad Pro and similar devices
+------------------------------ */
+@media screen and (min-width: 992px) {
+  .badge-position {  left: 33%; }
+  .cover-container {  background-position: center; }
+  .navbar-brand {  margin-right: 26%; }
+  .nav-link {  font-size: 1.25rem; }
+  .nav-menu {  margin-top: 1.5%; }
+}
+
+
+/* --------------------------------
+bootstrap breakpoint - extra large
+desktop and similar devices
+----------------------------------- */
+@media screen and (min-width: 1200px) {
+  .badge-position {  left: 36%; }
+  .badge-warning {  font-size: 85%; }
+  .cover-container {  height: 100vh; }
+  .navbar-brand {  margin-right: 32%; }
+  .nav-link {  font-size: 1.35rem; margin-right: 1.1rem; }
+  .nav-menu {  margin-top: 2.5% }
+}
